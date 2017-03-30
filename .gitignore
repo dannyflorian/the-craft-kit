@@ -1,0 +1,19 @@
+# Local OSX files
+.DS_Store
+
+# Apache
+.htaccess
+
+# Build Files
+node_modules/*
+.sass-cache/*
+
+# Craft System Files
+craft/config/db.php
+craft/config/general.php
+
+# Robots
+robots.txt
+
+# Uploads
+uploads/*

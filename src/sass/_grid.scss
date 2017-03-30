@@ -1,0 +1,187 @@
+//container
+.fluid-container {
+	width: 100%;
+}
+.container {
+	//display:block;
+	box-sizing:border-box;
+	margin:0 auto;
+	//max-width:auto;
+	@if $static-width != false {
+		width:$static-width;
+	} @else {
+		width:100%;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+.container:before,
+.container:after {
+	display: table;
+	content: " ";
+}
+
+@media only screen and (min-width: 0px) and (max-width: #{$md-breakpoint}) {
+	.container {
+		padding: 0 20px;
+	}
+}
+
+@media only screen and (min-width: #{$md-breakpoint}) and (max-width: #{$lg-breakpoint}) {
+	.container {
+		padding: 0 20px;
+	}
+}
+
+@include old-ie("only screen and (min-width: #{$lg-breakpoint}) and (max-width: #{$xl-breakpoint})") {
+    .container {
+    	padding: 0 20px;
+        max-width: $lg-max;
+    }
+}
+
+@media only screen and (min-width: #{$xl-breakpoint}) {
+    .container {
+    	padding: 0 20px;
+        max-width: $xl-max;
+    }
+}
+
+//row
+.row {
+	//position:relative;
+	//display:block;
+}
+
+.flex-row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.row:before,
+.row:after {
+	content: " ";
+	display: table;
+}
+
+.row:after {
+	clear:both;
+}
+
+//blocks
+[class*="block-"] {
+	position:relative;
+	box-sizing:border-box;
+	float:left;
+	width:100%;
+	overflow:visible;
+}
+
+[class*="flex-item-"] {
+	box-sizing:border-box;
+	width:100%;
+}
+
+@media only screen and (min-width: 0px) and (max-width:#{$md-breakpoint}) {
+	[class*="block-"] {
+		padding: 0 $sm-gutter;
+	}
+
+	/* Stubborn 'sm' block classes */
+	@for $i from 1 through $block-count {
+		.block-sm-#{$i} {
+			width:percentage($i / $block-count) !important;
+		}
+
+		.push-sm-#{$i} {
+			margin-left:percentage($i / $block-count) !important;
+		}
+
+		.pull-sm-#{$i} {
+			margin-left:-(percentage($i / $block-count)) !important;
+		}
+	}
+}
+
+@media only screen and (min-width: #{$md-breakpoint}) and (max-width:#{$lg-breakpoint}) {
+	[class*="block-"] {
+		padding: 0 $md-gutter;
+	}
+	/* Stubborn 'md' block classes */
+	@for $i from 1 through $block-count {
+		.block-md-#{$i} {
+			width:percentage($i / $block-count) !important;
+		}
+
+		.push-md-#{$i} {
+			margin-left:percentage($i / $block-count) !important;
+		}
+
+		.pull-md-#{$i} {
+			margin-left:-(percentage($i / $block-count)) !important;
+		}
+	}
+}
+
+@include old-ie("only screen and (min-width: #{$lg-breakpoint}) and (max-width: #{$xl-breakpoint})") {
+	[class*="block-"] {
+		padding: 0 $lg-gutter;
+	}
+	/* Stubborn 'lg' block classes */
+	@for $i from 1 through $block-count {
+		.block-lg-#{$i} {
+			width:percentage($i / $block-count);
+		}
+
+		.push-lg-#{$i} {
+			margin-left:percentage($i / $block-count);
+		}
+
+		.pull-lg-#{$i} {
+			margin-left:-(percentage($i / $block-count));
+		}
+	}
+}
+
+@media only screen and (min-width: #{$xl-breakpoint}) {
+	[class*="block-"] {
+		padding: 0 $xl-gutter;
+	}
+	/* Stubborn 'xl' block classes */
+	@for $i from 1 through $block-count {
+		.block-xl-#{$i} {
+			width:percentage($i / $block-count) !important;
+		}
+
+		.push-xl-#{$i} {
+			margin-left:percentage($i / $block-count) !important;
+		}
+
+		.pull-xl-#{$i} {
+			margin-left:-(percentage($i / $block-count)) !important;
+		}
+	}
+}
+
+//Standard sizes
+@include old-ie("only screen and (min-width: #{$lg-breakpoint})") {
+	@for $i from 1 through $block-count {
+		.block-#{$i} {
+			width:percentage($i / $block-count);
+		}
+
+		.flex-item-#{$i} {
+			width:percentage($i / $block-count);
+		}
+
+		.push-#{$i} {
+			margin-left:percentage($i / $block-count);
+		}
+
+		.pull-#{$i} {
+			margin-left:-(percentage($i / $block-count));
+		}
+	}
+}

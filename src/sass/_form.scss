@@ -1,0 +1,72 @@
+button,
+textarea,
+input[type="text"] {
+	-webkit-appearance: none;
+}
+
+.form-location {
+	visibility: hidden;
+	position: absolute;
+	left: -9999px;
+}
+
+.resumeLabel {
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+
+input,
+textarea {
+	font-size: 18px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+textarea {
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-radius: 0;
+	font-size: 18px;
+	line-height: 1.5;
+	padding: 0 10px;
+	outline: none;
+	&::-webkit-input-placeholder {
+		font-size: 18px;
+	   	color: $black;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+		font-size: 18px;
+	   	color: $black;
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+		font-size: 18px;
+	   	color: $black;
+	}
+
+	&:-ms-input-placeholder {
+		font-size: 18px;
+	   	color: $black;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+	background-color: transparent;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-radius: 0;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 10px;
+	outline: none;
+}

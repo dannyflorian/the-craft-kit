@@ -1,0 +1,23 @@
+//Output Settings
+$old-ie: false;
+
+// Breakpoints
+$static-width:false;
+$sm-max:468px;
+$md-breakpoint:768px;
+$lg-breakpoint:1024px;
+$lg-max: 1280px;
+$xl-breakpoint:1366px;
+$xl-max:1280px;
+
+
+//Grid settings
+$block-count:12;
+$sm-margin:10px;
+$sm-gutter:5px;
+$md-margin:40px;
+$md-gutter:20px;
+$lg-margin:40px;
+$lg-gutter:30px;
+$xl-margin:50px;
+$xl-gutter:40px;

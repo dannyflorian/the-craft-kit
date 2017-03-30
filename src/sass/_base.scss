@@ -1,0 +1,18 @@
+body {
+	color: $black;
+	font-family: $body-fonts;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: $red;
+	text-decoration: none;
+}
+a,p,img,li,span,.svg, div {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+ 	-webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+img {
+	max-width: 100%;
+}
